@@ -82,7 +82,7 @@ def validate():
     # 1. Source files
     print("📁 Source code:")
     for f in ["src/m1_chunking.py", "src/m2_search.py", "src/m3_rerank.py",
-              "src/m4_eval.py", "src/pipeline.py"]:
+              "src/m4_eval.py", "src/m5_enrichment.py", "src/pipeline.py"]:
         if not check_file(f):
             errors += 1
 

@@ -21,6 +21,8 @@ def main():
     print("(paragraph chunking + dense-only, no rerank, no enrichment)")
     print("=" * 60)
 
+    os.makedirs("reports", exist_ok=True)
+
     docs = load_documents()
     chunks = []
     for doc in docs:
@@ -67,7 +69,7 @@ def main():
     print("\nBASIC BASELINE SCORES")
     for m in ["faithfulness", "answer_relevancy", "context_precision", "context_recall"]:
         print(f"  {m}: {results.get(m, 0):.4f}")
-    save_report(results, [], path="naive_baseline_report.json")
+    save_report(results, [], path="reports/naive_baseline_report.json")
     print("\nDone! Now implement advanced modules and run: python main.py")
 
 
